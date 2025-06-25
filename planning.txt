@@ -1,0 +1,25 @@
+## TODO ##
+(KLAAR) Database model en controllers maken
+() views bestanden aanmaken en main layout maken
+() Uitwerken welke gerechten er in het database komen en die toevoegen in de tabel gerechten
+
+() Sessie functionaliteiten Uitwerken
+    () flowchart maken van de views met draw.io
+    () sessie functionaliteiten uitwerken
+        () sessie starten, () sessie afsluiten
+
+() bestel_menu view uitwerken
+    () frontend
+    () backend: Een paar gerechten ophalen per category
+    () views maken voor alle categoriën en deze uitwerken:
+        () dranken, () voorgerechten, () hoofdgerechten, () nagerechten
+    () bestelling toevoegen functionaliteit uitwerken
+
+() bestel_overzicht_lokaal view uitwerken 
+
+() administrator login functionaliteit uitwerken
+
+() bestel_overzicht_globaal view uitwerken:
+    () sessies ophalen, () sessies filteren op tafelnummer, () sessie bestellingen bekijken
+
+() functionaliteit uitwerken voor leeftijdsgebonden gerechten

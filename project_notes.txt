@@ -8,6 +8,8 @@ Nadat een sessie is afgesloten kan een werknemer de tablet aan een nieuwe tafel 
 Werknemers kunnen de tablets ook gebruiker om inzicht te krijgen van alle bestellingen die gedaan zijn in het restaurant.
 Wanneer de tablet niet in sessie is kan de werknemer toegang krijgen tot dit admin paneel.
 
+** Latere functionaliteiten **
+Maak een tabel voor tafels met een tafel_id en aantal_plekken.
 
 ** Database tabellen **
 () Gerechten [gerecht_id, prijs, leeftijdsgebonden (bool), category (enum), subcategory]
