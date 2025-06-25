@@ -1,0 +1,57 @@
+## Restaurant bestel app ##
+
+** Context **
+De app komt op tablets te staan. Deze tablets kunnen door een werknemer aan een tafel worden gekoppeld zodat klanten deze kunnen
+gebruiken om gerechten te bestellen en hun bestellingen te bekijken.
+De klant kan er voor kiezen om zijn sessie af te sluiten door te betalen.
+Nadat een sessie is afgesloten kan een werknemer de tablet aan een nieuwe tafel koppelen.
+Werknemers kunnen de tablets ook gebruiker om inzicht te krijgen van alle bestellingen die gedaan zijn in het restaurant.
+Wanneer de tablet niet in sessie is kan de werknemer toegang krijgen tot dit admin paneel.
+
+
+** Database tabellen **
+() Gerechten [gerecht_id, prijs, leeftijdsgebonden (bool), category (enum), subcategory]
+() sessies [sessie_id, tafel_nummer, datum, sessie_afgerond (bool)]
+() bestellingen [bestelling_id, sessie_id, gerecht_id]
+() werknemerscodes
+
+** Views **
+() welkom:
+sessie starten door tafelnummer te koppelen en login voor admin paneel
+
+() bestel_menu:
+Gerechten bestellen wanneer in sessie
+
+() Apparte views voor de categoriën:
+dranken, voorgerecht, hoofdgerecht, nagerecht, gerecht_zoeken
+
+() bestel_overzicht_lokaal:
+Bestellingen bekijken van de huidige sessie
+
+() afrekenen:
+Sessie afsluiten door te betalen
+
+
+() admin_welkom:
+admin paneel met links naar verschillende views
+
+() bestel_overzicht_globaal:
+Overzicht van alle sessies gesorteerd op datum en tijd met filter voor tafelnummer.
+Per sessie kan een detailoverzicht worden bekeken in de view: bestel_overzicht_lokaal
+
+** User stories **
+() Als gebruiker wil ik gerechten kunnen bestellen via een mooi gebruikers interface met secties voor:
+   Dranken (warm / koud), voorgerecht, hoofdgerecht, nagerecht
+
+() Als gebruiker wil ik gerechten kunnen zoeken met een zoekbalk
+
+() Als gebruiker wil ik mijn bestellingen kunnen bekijken
+
+() Als gebruiker wil ik mijn bestelling kunnen betalen
+   Hierbij word de sessie stopgezet
+
+() Als werknemer wil ik een sessie kunnen starten door een tafelnummer lokaal te koppelen
+
+() Als werknemer wil ik een melding krijgen bij leeftijdsgebonden bestellingen zodat ik de bestelling kan goedkeuren of weigeren
+
+() Als administrator wil ik inzicht krijgen op alle sessies die gedaan zijn binnen het restaurant
