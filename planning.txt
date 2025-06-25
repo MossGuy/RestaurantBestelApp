@@ -1,6 +1,7 @@
 ## TODO ##
 (KLAAR) Database model en controllers maken
 () views bestanden aanmaken en main layout maken
+() paden maken in de web.php
 () Uitwerken welke gerechten er in het database komen en die toevoegen in de tabel gerechten
 
 () Sessie functionaliteiten Uitwerken
