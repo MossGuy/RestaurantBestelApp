@@ -1,9 +1,9 @@
 ## TODO ##
 (KLAAR) Database model en controllers maken
-() views bestanden aanmaken en main layout maken
-() paden maken in de web.php
+(KLAAR) views bestanden aanmaken en main layout maken
+(KLAAR) paden maken in de web.php
 () Uitwerken welke gerechten er in het database komen en die toevoegen in de tabel gerechten
-
+   via migratie bestand
 () Sessie functionaliteiten Uitwerken
     () flowchart maken van de views met draw.io
     () sessie functionaliteiten uitwerken
