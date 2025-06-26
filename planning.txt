@@ -2,7 +2,7 @@
 (KLAAR) Database model en controllers maken
 (KLAAR) views bestanden aanmaken en main layout maken
 (KLAAR) paden maken in de web.php
-() Uitwerken welke gerechten er in het database komen en die toevoegen in de tabel gerechten
+(*) Uitwerken welke gerechten er in het database komen en die toevoegen in de tabel gerechten
    via migratie bestand
 () Sessie functionaliteiten Uitwerken
     (KLAAR) flowchart maken van de views met draw.io
@@ -29,3 +29,5 @@
 () menu_weergave uitwerken voor admin paneel
 
 () functionaliteit uitwerken voor leeftijdsgebonden gerechten
+
+*: Genoeg om mee te testen
