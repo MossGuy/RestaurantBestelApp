@@ -57,3 +57,7 @@ Per sessie kan een detailoverzicht worden bekeken in de view: bestel_overzicht_l
 () Als werknemer wil ik een melding krijgen bij leeftijdsgebonden bestellingen zodat ik de bestelling kan goedkeuren of weigeren
 
 () Als administrator wil ik inzicht krijgen op alle sessies die gedaan zijn binnen het restaurant
+
+() Als administrator wil ik alle open bestellingen kunnen bekijken zodat ik die aan de koks kan doorgeven
+
+() Als administrator wil ik het menu kunnen bekijken op een makkelijke manier

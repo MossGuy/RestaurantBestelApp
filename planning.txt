@@ -5,7 +5,7 @@
 () Uitwerken welke gerechten er in het database komen en die toevoegen in de tabel gerechten
    via migratie bestand
 () Sessie functionaliteiten Uitwerken
-    () flowchart maken van de views met draw.io
+    (KLAAR) flowchart maken van de views met draw.io
     () sessie functionaliteiten uitwerken
         () sessie starten, () sessie afsluiten
 
@@ -22,5 +22,10 @@
 
 () bestel_overzicht_globaal view uitwerken:
     () sessies ophalen, () sessies filteren op tafelnummer, () sessie bestellingen bekijken
+
+() open_bestellingen uitwerken
+    () frontend - tabel maken, () backend - bestellingen ophalen, () knop maken bestelling sluiten
+
+() menu_weergave uitwerken voor admin paneel
 
 () functionaliteit uitwerken voor leeftijdsgebonden gerechten

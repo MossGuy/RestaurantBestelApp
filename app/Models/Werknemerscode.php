@@ -10,7 +10,7 @@ class Werknemerscode extends Model
     use HasFactory;
 
     protected $fillable = [
-        'code' // Voeg deze kolom toe in je migratie
+        'code'
     ];
 
     // Eventueel: als je extra beveiliging wilt (zoals code hashing), kun je dat hier instellen

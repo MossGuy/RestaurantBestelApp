@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             
             $table->foreignId('sessie_id')
-                ->constrained('sessies', 'sessie_id')
+                ->constrained('tafel_sessies', 'sessie_id')
                 ->onDelete('cascade');
                 
             $table->foreignId('gerecht_id')

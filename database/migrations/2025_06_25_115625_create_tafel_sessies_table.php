@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sessies', function (Blueprint $table) {
+        Schema::create('tafel_sessies', function (Blueprint $table) {
             $table->id('sessie_id');
             $table->integer('tafel_nummer');
             $table->boolean('afgerond');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sessies');
+        Schema::dropIfExists('tafel_sessies');
     }
 };
