@@ -12,14 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('gerechten', function (Blueprint $table) {
-        $table->id('gerecht_id');
-        $table->decimal('prijs', 6, 2); // prijs met max 9999.99
-        $table->boolean('leeftijdsgebonden');
-        $table->enum('category', ['voorgerecht', 'hoofdgerecht', 'nagerecht', 'drank']);
-        $table->string('subcategory')->nullable();
-        $table->timestamps();
-    });
-
+            $table->id('gerecht_id');
+            $table->string('naam');
+            $table->enum('category', ['voorgerecht', 'hoofdgerecht', 'nagerecht', 'drank']);
+            $table->string('subcategory')->nullable();
+            $table->decimal('prijs', 6, 2); // prijs met max 9999.99
+            $table->boolean('leeftijdsgebonden');
+            $table->text('beschrijving');
+            // kolom voor allergenen
+            $table->timestamps();
+        });
     }
 
     /**

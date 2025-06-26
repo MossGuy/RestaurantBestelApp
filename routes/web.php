@@ -17,6 +17,7 @@ Route::prefix('klant')->group(function () {
         Route::view('/hoofdgerecht', 'klant.menu.hoofdgerechten');
         Route::view('/nagerecht', 'klant.menu.nagerechten');
         Route::view('/drank', 'klant.menu.dranken');
+        Route::view('/gerecht', 'klant.menu.gerecht');
     });
 });
 
