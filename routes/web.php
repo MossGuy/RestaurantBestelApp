@@ -11,14 +11,7 @@ Route::prefix('klant')->group(function () {
     Route::view('/menu', 'klant.menu');
     Route::view('/besteloverzicht', 'klant.bestel_overzicht_lokaal');
     Route::view('/betalen', 'klant.betalen');
-
-    Route::prefix('menu')->group(function () {
-        Route::view('/voorgerecht', 'klant.menu.voorgerechten');
-        Route::view('/hoofdgerecht', 'klant.menu.hoofdgerechten');
-        Route::view('/nagerecht', 'klant.menu.nagerechten');
-        Route::view('/drank', 'klant.menu.dranken');
-        Route::view('/gerecht', 'klant.menu.gerecht');
-    });
+    Route::view('/gerecht', 'klant.gerecht');
 });
 
 // Admingedeelte

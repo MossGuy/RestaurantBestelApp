@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('gerechten', function (Blueprint $table) {
             $table->id('gerecht_id');
             $table->string('naam');
-            $table->enum('category', ['voorgerecht', 'hoofdgerecht', 'nagerecht', 'drank']);
+            $table->string('category');
             $table->string('subcategory')->nullable();
             $table->decimal('prijs', 6, 2); // prijs met max 9999.99
             $table->boolean('leeftijdsgebonden');

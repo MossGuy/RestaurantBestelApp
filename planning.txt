@@ -11,10 +11,10 @@
 
 () bestel_menu view uitwerken
     () frontend
-    () backend: Een paar gerechten ophalen per category
-    () views maken voor alle categoriën en deze uitwerken:
-        () dranken, () voorgerechten, () hoofdgerechten, () nagerechten
+    () backend: Een paar gerechten ophalen en per categorie weergeven
+    () maak een filter foor elke categorie
     () bestelling toevoegen functionaliteit uitwerken
+        () individueel gerecht bekijken () gerecht toevoegen via knop
 
 () bestel_overzicht_lokaal view uitwerken 
 
