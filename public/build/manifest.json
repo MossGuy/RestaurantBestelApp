@@ -1,6 +1,10 @@
 {
+  "public/images/restaurant.jpg": {
+    "file": "assets/restaurant-CCMv1Gx5.jpg",
+    "src": "public/images/restaurant.jpg"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-DC552p13.css",
+    "file": "assets/app-CRtwtzfG.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
