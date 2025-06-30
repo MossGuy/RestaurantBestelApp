@@ -12,7 +12,7 @@
                 <li class="border-b pb-1">
                     <span class="font-medium">{{ $gerecht->naam }}</span> 
                     <span class="text-sm text-gray-500">
-                        ({{ $gerecht->subcategory ?: 'geen subcategorie' }}) – 
+                        {{ $gerecht->subcategory ?: '' }} – 
                         €{{ number_format($gerecht->prijs, 2, ',', '.') }}
                     </span>
                 </li>
