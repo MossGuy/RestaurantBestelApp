@@ -110,6 +110,48 @@ return new class extends Migration
             'updated_at' => now()
         ],
 
+        // == Dranken ==
+        [
+            'naam' => 'Peach Paradise',
+            'category' => 'drank',
+            'subcategory' => 'ice-tea',
+            'prijs' => 3.90,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Peach',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Lychee Love',
+            'category' => 'drank',
+            'subcategory' => 'ice-tea',
+            'prijs' => 3.90,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Lychee',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Gold Sunshine',
+            'category' => 'drank',
+            'subcategory' => 'ice-tea',
+            'prijs' => 3.90,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Mango',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Citrus Daydream',
+            'category' => 'drank',
+            'subcategory' => 'ice-tea',
+            'prijs' => 3.90,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Lemon',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+
         // == Cocktails ==
         [
             'naam' => 'Pornstar Martini',
