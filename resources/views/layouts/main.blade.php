@@ -6,21 +6,19 @@
     @vite(['resources/css/app.css'])
     <title>Main</title>
 </head>
-<body class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
-    <!-- Navigatie -->
+<body class="flex flex-col h-screen overflow-hidden">
+
+    <!-- Navigatiebalk -->
     <nav class="bg-teal-700">
-        <p class="text-lg px-4 py-3 text-white font-semibold shadow-md">
-            Restaurant Bestel App
-        </p>
+        <p class="text-lg px-4 py-1 shadow-lg">Restaurant Bestel App</p>
     </nav>
 
-    <!-- Hoofdinhoud -->
-    <main class="flex-grow">
-        <div class="container mx-auto px-4 py-8">
-            <div class="mx-auto w-full sm:max-w-md md:max-w-lg lg:max-w-xl p-6 bg-stone-200">
-                @yield('main')
-            </div>
+    <!-- Hoofdcontent, scrollbaar -->
+    <main class="flex-grow overflow-hidden">
+        <div class="mx-auto w-full sm:max-w-md md:max-w-lg lg:max-w-xl h-full p-6 bg-stone-200 overflow-y-auto">
+            @yield('main')
         </div>
     </main>
+
 </body>
 </html>
