@@ -9,7 +9,7 @@ class AdminMenuController extends Controller
 {
     public function index()
     {
-        $volgorde = ['ramen', 'dessert', 'drank'];
+        $volgorde = ['ramen', 'dessert', 'drank', 'cocktails'];
 
         $gerechten = DB::table('gerechten')
         ->orderBy('category')
