@@ -112,42 +112,42 @@ return new class extends Migration
 
         // == Dranken ==
         [
-            'naam' => 'Peach Paradise',
+            'naam' => 'Pepsi',
             'category' => 'drank',
-            'subcategory' => 'ice-tea',
-            'prijs' => 3.90,
+            'subcategory' => '',
+            'prijs' => 2.50,
             'leeftijdsgebonden' => false,
             'beschrijving' => 'Peach',
             'created_at' => now(),
             'updated_at' => now()
         ],
         [
-            'naam' => 'Lychee Love',
+            'naam' => 'Lipton Ice Tea Sparkling',
             'category' => 'drank',
-            'subcategory' => 'ice-tea',
-            'prijs' => 3.90,
+            'subcategory' => '',
+            'prijs' => 2.50,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Lychee',
+            'beschrijving' => 'Peach',
             'created_at' => now(),
             'updated_at' => now()
         ],
         [
-            'naam' => 'Gold Sunshine',
+            'naam' => 'Lipton Ice Tea Green',
             'category' => 'drank',
-            'subcategory' => 'ice-tea',
-            'prijs' => 3.90,
+            'subcategory' => '',
+            'prijs' => 2.50,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Mango',
+            'beschrijving' => 'Peach',
             'created_at' => now(),
             'updated_at' => now()
         ],
         [
-            'naam' => 'Citrus Daydream',
+            'naam' => '7-Up',
             'category' => 'drank',
-            'subcategory' => 'ice-tea',
-            'prijs' => 3.90,
+            'subcategory' => '',
+            'prijs' => 2.50,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Lemon',
+            'beschrijving' => 'Peach',
             'created_at' => now(),
             'updated_at' => now()
         ],
@@ -155,8 +155,8 @@ return new class extends Migration
         // == Cocktails ==
         [
             'naam' => 'Pornstar Martini',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 10.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Vodka / vanilla / passion fruit',
@@ -165,8 +165,8 @@ return new class extends Migration
         ],
         [
             'naam' => 'Espresso Martini',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 10.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Vodka / espresso / coffee liqour',
@@ -175,8 +175,8 @@ return new class extends Migration
         ],
         [
             'naam' => 'Koneo Love',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 10.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Lemon soda / yakult / soju',
@@ -185,8 +185,8 @@ return new class extends Migration
         ],
         [
             'naam' => 'Mojito',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 9.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Mint / lime / rum / sugar',
@@ -195,8 +195,8 @@ return new class extends Migration
         ],
         [
             'naam' => 'Strawberry Mojito',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 9.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Strawberry rum / mint / lime / sugar',
@@ -205,8 +205,8 @@ return new class extends Migration
         ],
         [
             'naam' => 'Tokyo Breeze',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 9.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Jinzu Gin / tonic / citrus',
@@ -215,14 +215,15 @@ return new class extends Migration
         ],
         [
             'naam' => 'Watermelon Crush',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 9.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Watermelon liqour / soda / lime',
             'created_at' => now(),
             'updated_at' => now()
         ]
+        
     ]);
     }
 
