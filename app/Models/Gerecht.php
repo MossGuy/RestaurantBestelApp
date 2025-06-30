@@ -13,10 +13,12 @@ class Gerecht extends Model
     public $incrementing = true;
 
     protected $fillable = [
+        'naam',
+        'category',
+        'sybcategory',
         'prijs',
         'leeftijdsgebonden',
-        'category',
-        'subcategory',
+        'beschrijving',
     ];
 
     protected $casts = [
