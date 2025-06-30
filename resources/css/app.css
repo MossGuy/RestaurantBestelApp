@@ -9,3 +9,10 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+body {
+    background-image: url('../../public/images/restaurant.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

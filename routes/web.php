@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminMenuController;
 
 // Startpagina
 Route::view('/', 'welkom');
@@ -19,7 +20,7 @@ Route::prefix('admin')->group(function () {
     Route::view('/', 'admin.index');
     Route::view('/besteloverzicht', 'admin.bestel_overzicht_globaal');
     Route::view('/open-bestellingen', 'admin.open_bestellingen');
-    Route::view('/menu', 'admin.menu_weergave');
+    Route::get('/menu', [AdminMenuController::class, 'index']);
 });
 
 
