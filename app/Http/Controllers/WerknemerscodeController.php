@@ -16,7 +16,7 @@ class WerknemerscodeController extends Controller
         ]);
 
         $code = $request->input('code');
-        return view('welkom', ['ingelogd' => true, 'code' => $code,]);
+        return view('welkom', ['ingelogd' => true]);
     }
 
     /**

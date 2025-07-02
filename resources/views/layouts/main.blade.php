@@ -15,7 +15,7 @@
 
     <!-- Hoofdcontent, scrollbaar -->
     <main class="flex-grow overflow-hidden">
-        <div class="mx-auto w-full sm:max-w-md md:max-w-lg lg:max-w-xl h-full p-6 bg-white overflow-y-auto">
+        <div class="mx-auto w-full sm:max-w-md md:max-w-lg lg:max-w-xl h-full p-1 bg-white overflow-y-auto">
             @yield('main')
         </div>
     </main>
