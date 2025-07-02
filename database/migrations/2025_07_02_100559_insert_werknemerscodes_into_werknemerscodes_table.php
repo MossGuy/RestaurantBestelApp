@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -11,11 +12,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('werknemerscodes', function (Blueprint $table) {
-            $table->id();
-            $table->integer('code');
-            $table->timestamps();
-        });
+        DB::table('werknemerscodes')->insert([
+            ['code' => '259529'],
+            ['code' => '69']
+        ]);
     }
 
     /**
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('werknemerscodes');
+        //
     }
 };

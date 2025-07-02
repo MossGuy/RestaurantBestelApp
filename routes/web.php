@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminMenuController;
+use App\Http\Controllers\WerknemerscodeController;
 
 // Startpagina
 Route::view('/', 'welkom');
@@ -23,5 +24,5 @@ Route::prefix('admin')->group(function () {
     Route::get('/menu', [AdminMenuController::class, 'index']);
 });
 
-
-
+Route::resource('codes', WerknemerscodeController::class);
+Route::post('/codes/login', [WerknemerscodeController::class, 'login'])->name('codes.login');

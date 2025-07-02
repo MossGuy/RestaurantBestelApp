@@ -7,11 +7,16 @@ use Illuminate\Http\Request;
 class WerknemerscodeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Validate login
      */
-    public function index()
+    public function login(Request $request)
     {
-        //
+        $request->validate([
+            'code' => 'required|exists:werknemerscodes,code',
+        ]);
+
+        $code = $request->input('code');
+        return view('welkom', ['ingelogd' => true, 'code' => $code,]);
     }
 
     /**
