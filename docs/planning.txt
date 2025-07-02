@@ -18,7 +18,7 @@
 
 () bestel_overzicht_lokaal view uitwerken 
 
-() administrator login functionaliteit uitwerken
+(KLAAR) administrator login functionaliteit uitwerken
 
 () bestel_overzicht_globaal view uitwerken:
     () sessies ophalen, () sessies filteren op tafelnummer, () sessie bestellingen bekijken
