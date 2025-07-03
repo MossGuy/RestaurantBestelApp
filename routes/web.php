@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WerknemerscodeController;
 use App\Http\Controllers\GerechtController;
+use App\Http\Controllers\SessieController;
 
 use App\Http\Controllers\Admin\MenuController as AdminMenuController;
 use App\Http\Controllers\Klant\MenuController as KlantMenuController;
@@ -13,8 +14,8 @@ Route::view('/', 'welkom');
 // Klantgedeelte
 Route::prefix('klant')->group(function () {
     Route::view('/', 'klant.index');
-    Route::view('/menu', 'klant.menu');
-    // Route::get('/menu', [KlantMenuController::class, 'index'])->name('klant.menu');
+    // Route::view('/menu', 'klant.menu');
+    Route::get('/menu', [KlantMenuController::class, 'index'])->name('klant.menu');
     Route::view('/besteloverzicht', 'klant.bestel_overzicht_lokaal');
     Route::view('/betalen', 'klant.betalen');
     Route::view('/gerecht', 'klant.gerecht');

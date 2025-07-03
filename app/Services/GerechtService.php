@@ -24,17 +24,13 @@ class GerechtService
             ->mapWithKeys(fn($cat) => [$cat => $gerechten[$cat] ?? collect()]);
     }
 
-    public function menu(Request $request)
+    public function menu(?string $categorie = null, ?string $subcategorie = null)
     {
-        $categorie = $request->query('categorie');
-        $subcategorie = $request->query('subcategory');
-
         if ($subcategorie) {
             $gerechten = Gerecht::where('subcategory', $subcategorie)->get();
         } elseif ($categorie) {
             $gerechten = Gerecht::where('category', $categorie)->get();
         } else {
-            // Top 4 per categorie (voorbeeld)
             $gerechten = Gerecht::select('category', 'naam', 'prijs')
                 ->get()
                 ->groupBy('category')
