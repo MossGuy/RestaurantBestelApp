@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminMenuController;
 use App\Http\Controllers\WerknemerscodeController;
 use App\Http\Controllers\GerechtController;
 
