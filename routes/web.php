@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminMenuController;
 use App\Http\Controllers\WerknemerscodeController;
+use App\Http\Controllers\GerechtController;
 
 // Startpagina
 Route::view('/', 'welkom');
@@ -21,8 +22,9 @@ Route::prefix('admin')->group(function () {
     Route::view('/', 'admin.index');
     Route::view('/besteloverzicht', 'admin.bestel_overzicht_globaal');
     Route::view('/open-bestellingen', 'admin.open_bestellingen');
-    Route::get('/menu', [AdminMenuController::class, 'index']);
+    Route::get('/menu', [GerechtController::class, 'index']);
 });
 
-Route::resource('codes', WerknemerscodeController::class);
+// classes met routes en methodes
 Route::post('/codes/login', [WerknemerscodeController::class, 'login'])->name('codes.login');
+Route::resource('codes', GerechtController::class);
