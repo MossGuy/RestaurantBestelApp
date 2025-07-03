@@ -41,6 +41,8 @@ admin paneel met links naar verschillende views
 Overzicht van alle sessies gesorteerd op datum en tijd met filter voor tafelnummer.
 Per sessie kan een detailoverzicht worden bekeken in de view: bestel_overzicht_lokaal
 
+
+
 ** User stories **
 () Als gebruiker wil ik gerechten kunnen bestellen via een mooi gebruikers interface met secties voor:
    Dranken (warm / koud), voorgerecht, hoofdgerecht, nagerecht

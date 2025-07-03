@@ -10,6 +10,18 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+/* scrollbar width */
+::-webkit-scrollbar {
+  width: 17px;
+}
+ 
+/* scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border: white solid; 
+  border-width: 10px 6px;
+}
+
 body {
     background-image: url('../../public/images/restaurant.jpg');
     background-size: cover;

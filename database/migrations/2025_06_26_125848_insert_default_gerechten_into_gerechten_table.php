@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 
 // gerecht categoriën die zijn toegevoegd:
-// Ramen, Dessert, Drank -> Cocktails
+// Ramen, Bijgerechten, Dessert, Drank -> Cocktails
 
 return new class extends Migration
 {
@@ -23,7 +23,7 @@ return new class extends Migration
             'subcategory' => 'rund',
             'prijs' => 14.90,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Ossenhaas',
+            'beschrijving' => 'Rundvleesplakken met verse noodles, zelfgemaakte kipbouillon en groenten',
             'created_at' => now(),
             'updated_at' => now()
         ],
@@ -33,7 +33,7 @@ return new class extends Migration
             'subcategory' => 'kip',
             'prijs' => 13.90,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Gefrituurde kip',
+            'beschrijving' => 'Gefrituurde kip met verse noodles, zelfgemaakte kipbouillon en groenten',
             'created_at' => now(),
             'updated_at' => now()
         ],
@@ -43,17 +43,17 @@ return new class extends Migration
             'subcategory' => 'varken',
             'prijs' => 13.90,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Gemarineerd varkensvlees',
+            'beschrijving' => 'Gemarineerd varkensvlees plakken met verse noodles, zelfgemaakte kipbouillon en groenten',
             'created_at' => now(),
             'updated_at' => now()
         ],
         [
             'naam' => 'Ramen Shrimp',
             'category' => 'ramen',
-            'subcategory' => 'garnaal',
+            'subcategory' => 'schaaldieren',
             'prijs' => 14.90,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Gepaneerde garnalen',
+            'beschrijving' => 'Gepaneerde garnalen met verse noodles, zelfgemaakte kipbouillon en groenten',
             'created_at' => now(),
             'updated_at' => now()
         ],
@@ -63,7 +63,129 @@ return new class extends Migration
             'subcategory' => 'vegetarisch',
             'prijs' => 12.90,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Tofu en groenten',
+            'beschrijving' => 'Tofu en groenten met verse noodles en zelfgemaakte kipbouillon',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+
+        // == bijgerechten ==
+        [
+            'naam' => 'Karaage',
+            'category' => 'bijgerecht',
+            'subcategory' => 'kip',
+            'prijs' => 4.50,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Gefrituurde kipblokjes (4 stuks)',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Gyoza',
+            'category' => 'bijgerecht',
+            'subcategory' => 'kip',
+            'prijs' => 3.90,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Pasteitjes met kip (3 stuks)',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'tempura Shrimp',
+            'category' => 'bijgerecht',
+            'subcategory' => 'schaaldieren',
+            'prijs' => 3.50,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Gepaneerde garnalen (2 stuks)',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Edamame',
+            'category' => 'bijgerecht',
+            'subcategory' => 'vegetarisch',
+            'prijs' => 3.50,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Portie sojabonen',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Mini spring rolls',
+            'category' => 'bijgerecht',
+            'subcategory' => 'vegetarisch',
+            'prijs' => 3.50,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Vegetarische mini loempia’s (6 stuks)',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Kimchi',
+            'category' => 'bijgerecht',
+            'subcategory' => '',
+            'prijs' => 2.90,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Koreaanse gefermenteerde kool',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Friet',
+            'category' => 'bijgerecht',
+            'subcategory' => 'vegetarisch',
+            'prijs' => 3.50,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Portie friet met truffle aioli',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Wakame Salade',
+            'category' => 'bijgerecht',
+            'subcategory' => 'vegetarisch',
+            'prijs' => 3.90,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Zeewier salade',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Koolsla Salade',
+            'category' => 'bijgerecht',
+            'subcategory' => 'vegetarisch',
+            'prijs' => 2.90,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Huisgemaakte koolsla',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Casave Chips',
+            'category' => 'bijgerecht',
+            'subcategory' => 'schaaldieren',
+            'prijs' => 3.50,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Portie casave chips',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Zoetzure komkommers',
+            'category' => 'bijgerecht',
+            'subcategory' => 'vegetarisch',
+            'prijs' => 2.90,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Zoetzure komkommers',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Witte rijst',
+            'category' => 'bijgerecht',
+            'subcategory' => 'vegetarisch',
+            'prijs' => 3.50,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Portie witte rijst',
             'created_at' => now(),
             'updated_at' => now()
         ],
