@@ -8,7 +8,7 @@
         </div>
 
 
-        @foreach($gerechtenPerCategorie as $categorie => $gerechten)
+        @foreach($gerechten as $categorie => $gerechten)
             <div class="mb-5">
                 <h2 class="text-xl font-semibold mb-2 capitalize">{{ $categorie }}</h2>
                 

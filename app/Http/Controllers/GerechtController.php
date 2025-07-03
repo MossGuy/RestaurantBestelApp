@@ -9,34 +9,6 @@ use Illuminate\Support\Facades\DB;
 class GerechtController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $gerechtenPerCategorie = GerechtController::gesorteerdeGerechtenPerCategorie();
-
-        return view('admin.menu_weergave', [
-            'gerechtenPerCategorie' => $gerechtenPerCategorie
-        ]);
-    }
-
-    public static function gesorteerdeGerechtenPerCategorie(): \Illuminate\Support\Collection
-{
-    $volgorde = ['ramen', 'bijgerecht', 'dessert', 'drank', 'cocktails'];
-
-    $gerechten = DB::table('gerechten')
-        ->orderBy('category')
-        ->orderBy('subcategory')
-        ->orderBy('naam')
-        ->get()
-        ->groupBy('category');
-
-    return collect($volgorde)
-        ->mapWithKeys(fn($cat) => [$cat => $gerechten[$cat] ?? collect()]);
-}
-
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create()
