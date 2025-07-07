@@ -15,7 +15,7 @@ class TafelSessie extends Model
     protected $fillable = [
         'tafel_nummer',
         'datum',
-        'sessie_afgerond',
+        'afgerond',
     ];
 
     protected $casts = [

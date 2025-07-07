@@ -34,9 +34,9 @@ class GerechtService
             $gerechten = Gerecht::select('category', 'naam', 'prijs')
                 ->get()
                 ->groupBy('category')
-                ->map(fn($items) => $items->take(4));
+                ->map(fn($items) => $items->take(2)); // select de top 2
         }
 
-        return view('klant.menu', compact('gerechten', 'categorie', 'subcategorie'));
+        return view('klant.index', compact('gerechten', 'categorie', 'subcategorie'));
     }
 }

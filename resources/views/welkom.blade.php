@@ -1,18 +1,18 @@
 @extends('layouts.main')
 
-<!-- TODO: maak view af met nieuwe if statements -->
-
 
 @section('main')
     @if($ingelogd ?? false)
+    <!-- tablet geactiveerd met inlogcode -->
     <section class="flex flex-col min-h-[60vh] max-w-lg mx-auto items-center">
         <h1 class="text-3xl font-semibold mb-3 text-center text-teal-700">Welkom</h1>
 
         <div class="flex flex-col flex-grow rounded-md p-1 justify-evenly">
             <div>
                 <h2 class="text-xl font-semibold mb-1 text-teal-700">Koppel een tafelnummer</h2>
-                <form action="" method="post" class="space-y-4">
-                    <input type="number" class="w-full bg-stone-200 border border-teal-700 rounded py-2 px-3 focus:outline-teal-500" placeholder="Voer tafelnummer in">
+                <form action="{{ route('tafel_sessie.store') }}" method="post" class="space-y-4">
+                    @csrf
+                    <input type="number" name="tafel_nummer" id="tafel_nummer" class="w-full bg-stone-200 border border-teal-700 rounded py-2 px-3 focus:outline-teal-500" placeholder="Voer tafelnummer in">
                     <input type="submit" value="Start" class="w-full bg-teal-600 rounded text-teal-50 font-semibold py-2 border-2 border-teal-700 hover:bg-teal-700 cursor-pointer transition">
                 </form>
             </div>
@@ -26,6 +26,7 @@
 
 
     @else
+    <!-- inlogcode invoeren -->
     <section class="flex flex-col min-h-[60vh] max-w-lg mx-auto text-center justify-center">
         <form action="{{ route('codes.login') }}" method="post">
             @csrf
