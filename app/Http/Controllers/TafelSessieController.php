@@ -24,12 +24,12 @@ class TafelSessieController extends Controller
 
         /* 3. Sessie-id + tafelnummer in Laravel-session bewaren */
         Session::put([
-            'sessie_id'    => $tafelSessie->id,
+            'sessie_id'    => $tafelSessie->sessie_id,
             'tafel_nummer' => $tafelnummer,
         ]);
 
         /* 4. Doorsturen naar het klant-menu (index) */
-        return redirect()->route('klant.menu');  // route('klant.menu') moet bestaan
+        return redirect()->route('klant.menu');
 
         return view('klant.index');
     }

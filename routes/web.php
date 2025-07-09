@@ -5,6 +5,9 @@ use App\Http\Controllers\WerknemerscodeController;
 use App\Http\Controllers\GerechtController;
 use App\Http\Controllers\TafelSessieController;
 
+use App\Http\Controllers\BestellingController;
+Route::resource('bestelling', BestellingController::class);
+
 use App\Http\Controllers\Admin\MenuController as AdminMenuController;
 use App\Http\Controllers\Klant\MenuController as KlantMenuController;
 
@@ -17,7 +20,7 @@ Route::prefix('klant')->group(function () {
     Route::get('/menu/{categorie?}/{subcategorie?}', [KlantMenuController::class, 'index'])->name('klant.menu');
     Route::view('/besteloverzicht', 'klant.bestel_overzicht_lokaal')->name('klant.bestellingen');
     Route::view('/betalen', 'klant.betalen')->name('betalen');
-    Route::view('/gerecht', 'klant.gerecht');
+    Route::get('/gerecht/{id}', [GerechtController::class, 'show'])->name('klant.gerecht.show');
 });
 
 // Admingedeelte
@@ -33,4 +36,5 @@ Route::post('/codes/login', [WerknemerscodeController::class, 'login'])->name('c
 Route::resource('gerecht', GerechtController::class);
 
 Route::resource('tafel_sessie', TafelSessieController::class);
+Route::resource('bestelling', BestellingController::class);
 Route::post('/tafel_sessie/stop', [TafelSessieController::class, 'stop_session'])->name('tafel_sessie.stop_session');

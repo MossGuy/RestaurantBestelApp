@@ -15,11 +15,12 @@ class Bestelling extends Model
     protected $fillable = [
         'sessie_id',
         'gerecht_id',
+        'tafel_nummer'
     ];
 
     public function sessie()
     {
-        return $this->belongsTo(Sessie::class, 'sessie_id');
+        return $this->belongsTo(TafelSessie::class, 'sessie_id');
     }
 
     public function gerecht()

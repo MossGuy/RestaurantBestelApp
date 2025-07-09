@@ -27,9 +27,10 @@ class GerechtController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Gerecht $gerecht)
+    public function show(int $id)
     {
-        //
+        $gerecht = Gerecht::findOrFail($id); // of `firstOrFail()` als je met andere zoekcriteria werkt
+        return view('klant.gerecht', compact('gerecht'));
     }
 
     /**

@@ -30,7 +30,7 @@ class GerechtService
         } elseif ($categorie) {
             return Gerecht::where('category', $categorie)->get();
         } else {
-            return Gerecht::select('category', 'naam', 'prijs')
+            return Gerecht::select('gerecht_id', 'category', 'naam', 'prijs') // gerecht_id toegevoegd
                 ->get()
                 ->groupBy('category')
                 ->map(fn($items) => $items->take(2));

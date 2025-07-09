@@ -21,6 +21,8 @@ return new class extends Migration
             $table->foreignId('gerecht_id')
                 ->constrained('gerechten', 'gerecht_id')
                 ->onDelete('cascade');
+
+            $table->integer('tafel_nummer');
             
             $table->timestamps();
         });
