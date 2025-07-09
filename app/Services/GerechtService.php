@@ -24,19 +24,16 @@ class GerechtService
             ->mapWithKeys(fn($cat) => [$cat => $gerechten[$cat] ?? collect()]);
     }
 
-    public function menu(?string $categorie = null, ?string $subcategorie = null)
-    {
+    public function menu(?string $categorie = null, ?string $subcategorie = null){
         if ($subcategorie) {
-            $gerechten = Gerecht::where('subcategory', $subcategorie)->get();
+            return Gerecht::where('subcategory', $subcategorie)->get();
         } elseif ($categorie) {
-            $gerechten = Gerecht::where('category', $categorie)->get();
+            return Gerecht::where('category', $categorie)->get();
         } else {
-            $gerechten = Gerecht::select('category', 'naam', 'prijs')
+            return Gerecht::select('category', 'naam', 'prijs')
                 ->get()
                 ->groupBy('category')
-                ->map(fn($items) => $items->take(2)); // select de top 2
+                ->map(fn($items) => $items->take(2));
         }
-
-        return view('klant.index', compact('gerechten', 'categorie', 'subcategorie'));
     }
 }

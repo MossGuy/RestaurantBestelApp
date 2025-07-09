@@ -14,7 +14,7 @@ Route::view('/', 'welkom');
 // Klantgedeelte
 Route::prefix('klant')->group(function () {
     Route::view('/', 'klant.index');
-    Route::get('/menu', [KlantMenuController::class, 'index'])->name('klant.menu');
+    Route::get('/menu/{categorie?}/{subcategorie?}', [KlantMenuController::class, 'index'])->name('klant.menu');
     Route::view('/besteloverzicht', 'klant.bestel_overzicht_lokaal')->name('klant.bestellingen');
     Route::view('/betalen', 'klant.betalen')->name('betalen');
     Route::view('/gerecht', 'klant.gerecht');

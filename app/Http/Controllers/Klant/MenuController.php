@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-    public function index(Request $request, GerechtService $service)
-    {
-        return $service->menu(
-            categorie: $request->query('categorie'),
-            subcategorie: $request->query('subcategory')
-        );
-    }
+    public function index(Request $request, GerechtService $service){
+        $categorie = $request->route('categorie');
+        $subcategorie = $request->route('subcategorie');
 
+        $gerechten = $service->menu($categorie, $subcategorie);
+
+        return view('klant.index', compact('gerechten', 'categorie', 'subcategorie'));
+    }
 }
