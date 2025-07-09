@@ -4,10 +4,10 @@
 (KLAAR) paden maken in de web.php
 (*) Uitwerken welke gerechten er in het database komen en die toevoegen in de tabel gerechten
    via migratie bestand
-() Sessie functionaliteiten Uitwerken
+(KLAAR) Sessie functionaliteiten Uitwerken
     (KLAAR) flowchart maken van de views met draw.io
-    () sessie functionaliteiten uitwerken
-        () sessie starten, () sessie afsluiten
+    (KLAAR) sessie functionaliteiten uitwerken
+        (KLAAR) sessie starten, (KLAAR) sessie afsluiten
 
 () bestel_menu view uitwerken
     () frontend
@@ -28,6 +28,6 @@
 
 (KLAAR) menu_weergave uitwerken voor admin paneel
 
-() functionaliteit uitwerken voor leeftijdsgebonden gerechten
+() functionaliteit uitwerken voor leeftijdsgebonden gerechten - toestemming geven met inlogcode
 
 *: Genoeg om mee te testen
