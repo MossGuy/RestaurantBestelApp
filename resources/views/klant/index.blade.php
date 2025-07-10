@@ -1,6 +1,13 @@
 @extends('layouts.main')
 
 @section('main')
+<section>
+    @if (session('success'))
+    <div class="bg-green-100 text-green-800 border border-green-300 p-3 rounded mb-4">
+        {{ session('success') }}
+    </div>
+@endif
+</section>
 <section class="flex flex-col min-h-screen">
     <h1 class="text-4xl text-center mb-4">Menu</h1>
 

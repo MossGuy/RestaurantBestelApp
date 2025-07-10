@@ -10,7 +10,7 @@ class Gerecht extends Model
     use HasFactory;
 
     protected $table = 'gerechten';
-    protected $primaryKey = 'gerecht_id'; // Aangepaste primaire sleutel
+    protected $primaryKey = 'gerecht_id';
     public $incrementing = true;
 
     protected $fillable = [

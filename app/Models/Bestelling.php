@@ -9,6 +9,8 @@ class Bestelling extends Model
 {
     use HasFactory;
 
+    protected $table = 'bestellingen';
+
     protected $primaryKey = 'bestelling_id';
     public $incrementing = true;
 

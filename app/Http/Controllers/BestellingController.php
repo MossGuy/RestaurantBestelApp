@@ -25,29 +25,23 @@ class BestellingController extends Controller
      */
     public function store(Request $request)
     {
-        // Validatie (optioneel, maar aanbevolen)
-        // $validated = $request->validate([
-        //     'gerecht_id' => ['required', 'exists:gerechten,id']
-        // ]);
+        $validated = $request->validate([
+            'gerecht_id' => ['required', 'exists:gerechten,gerecht_id']
+        ]);
 
         $sessie_id = session('sessie_id');
         $tafel_nummer = session('tafel_nummer');
 
+        if (!$sessie_id || !$tafel_nummer) {
+            return redirect()->back()->withErrors('Sessiegegevens ontbreken.');
+        }
 
-        // if (!$sessie_id || !$tafel_nummer) {
-        //     return redirect()->back()->withErrors('Sessiegegevens ontbreken.');
-        // }
-
-        echo "methode berijkt" . PHP_EOL;
-        echo "";
-        dd($request->all());
-
-        // Bestelling::create([
-        //     'sessie_id' => $sessie_id,
-        //     'gerecht_id' => $validated['gerecht_id'],
-        //     'tafel_nummer' => $tafel_nummer,
-        // ]);
-        // return redirect()->route('klant.menu')->with('success', 'Bestelling toegevoegd!');
+        Bestelling::create([
+            'sessie_id' => $sessie_id,
+            'gerecht_id' => $validated['gerecht_id'],
+            'tafel_nummer' => $tafel_nummer,
+        ]);
+        return redirect()->route('klant.menu')->with('success', 'Bestelling toegevoegd!');
     }
 
 

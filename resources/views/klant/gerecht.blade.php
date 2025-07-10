@@ -9,7 +9,7 @@
                 <p class="text-stone-700 my-2">€{{ number_format($gerecht->prijs, 2, ',', '.') }}</p>
                 <form action="{{ route('bestelling.store') }}" method="POST">
                     @csrf
-                    <input type="hidden" id="gerecht_id" name="gerecht_id" value="{{ $gerecht->id }}">
+                    <input type="hidden" id="gerecht_id" name="gerecht_id" value="{{ $gerecht->gerecht_id }}">
 
                     <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded">
                         Toevoegen aan bestelling
