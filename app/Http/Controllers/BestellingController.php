@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bestelling;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BestellingController extends Controller
 {
@@ -48,10 +49,44 @@ class BestellingController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        $session_id = session('sessie_id');
+
+        if (!$session_id) {
+            return redirect()->route('klant.menu')->with('error', 'Geen sessie actief.');
+        }
+
+        // Bestellingen groeperen per gerecht_id en aantal berekenen
+        $bestellingen = DB::table('bestellingen')
+            ->join('gerechten', 'bestellingen.gerecht_id', '=', 'gerechten.gerecht_id')
+            ->select(
+                'gerechten.naam as gerecht_naam',
+                'gerechten.prijs',
+                DB::raw('COUNT(bestellingen.id) as aantal')
+            )
+            ->where('bestellingen.sessie_id', $session_id)
+            ->groupBy('bestellingen.gerecht_id', 'gerechten.naam', 'gerechten.prijs')
+            ->get();
+
+        return view('klant.bestel_overzicht_lokaal', [
+            'bestellingen' => $bestellingen
+        ]);
     }
+
+    public function show_all()
+    {
+        $sessies = DB::table('tafel_sessies')
+            ->where('afgerond', true)
+            ->orderBy('created_at', 'desc') // Meest recente eerst
+            ->select('sessie_id', 'tafel_nummer', 'created_at')
+            ->get();
+
+        return view('admin.bestel_overzicht_globaal', compact('sessies'));
+    }
+
+
+
 
     /**
      * Show the form for editing the specified resource.

@@ -9,7 +9,10 @@
 @endif
 </section>
 <section class="flex flex-col min-h-screen">
-    <h1 class="text-4xl text-center mb-4">Menu</h1>
+    <div class="text-center">
+        <h1 class="text-2xl font-bold mb-6">Menu</h1>
+        <p><a href="{{ route('klant.bestellingen') }}" class="text-teal-700 p-2 border border-2 rounded-md hover:text-teal-700 font-semibold">Alle bestellingen</a></p>
+    </div>
 
     <div class="flex-1">
         @if (isset($categorie) || isset($subcategorie))
