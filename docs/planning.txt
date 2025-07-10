@@ -9,12 +9,12 @@
     (KLAAR) sessie functionaliteiten uitwerken
         (KLAAR) sessie starten, (KLAAR) sessie afsluiten
 
-() bestel_menu view uitwerken
-    () frontend
-    () backend: Een paar gerechten ophalen en per categorie weergeven
-    () maak een filter foor elke categorie
-    () bestelling toevoegen functionaliteit uitwerken
-        () individueel gerecht bekijken () gerecht toevoegen via knop
+(KLAAR) bestel_menu view uitwerken
+    (KLAAR) frontend
+    (KLAAR) backend: Een paar gerechten ophalen en per categorie weergeven
+    (KLAAR) maak een filter foor elke categorie
+    (KLAAR) bestelling toevoegen functionaliteit uitwerken
+        (KLAAR) individueel gerecht bekijken (KLAAR) gerecht toevoegen via knop
 
 () bestel_overzicht_lokaal view uitwerken 
 
