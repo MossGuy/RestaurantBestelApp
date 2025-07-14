@@ -16,12 +16,12 @@
     (KLAAR) bestelling toevoegen functionaliteit uitwerken
         (KLAAR) individueel gerecht bekijken (KLAAR) gerecht toevoegen via knop
 
-(IN PROGRESS) bestel_overzicht_lokaal view uitwerken 
+(KLAAR) bestel_overzicht_lokaal view uitwerken 
 
 (KLAAR) administrator login functionaliteit uitwerken
 
 () bestel_overzicht_globaal view uitwerken:
-    (KLAAR) sessies ophalen, () sessies filteren op tafelnummer, () sessie bestellingen bekijken
+    (KLAAR) sessies ophalen, () sessies filteren op tafelnummer, (KLAAR) sessie bestellingen bekijken
 
 () open_bestellingen uitwerken
     () frontend - tabel maken, () backend - bestellingen ophalen, () knop maken bestelling sluiten
