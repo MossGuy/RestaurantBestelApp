@@ -16,9 +16,7 @@ Route::view('/', 'welkom');
 
 // Klantgedeelte
 Route::prefix('klant')->group(function () {
-    // Route::view('/', 'klant.index');
     Route::get('/menu/{categorie?}/{subcategorie?}', [KlantMenuController::class, 'index'])->name('klant.menu');
-    // Route::get('/besteloverzicht', [BestellingController::class, 'show'])->name('klant.bestellingen');
     Route::get('/gerecht/{id}', [GerechtController::class, 'show'])->name('klant.gerecht.show');
     Route::view('/betalen', 'klant.betalen')->name('betalen');
 });
@@ -26,7 +24,6 @@ Route::prefix('klant')->group(function () {
 // Admingedeelte
 Route::prefix('admin')->group(function () {
     Route::view('/', 'admin.index');
-    // Route::view('/besteloverzicht', 'admin.bestel_overzicht_globaal')->name('admin.besteloverzicht');
     Route::get('/besteloverzicht', [BestellingController::class, 'show_all'])->name('admin.besteloverzicht');
     Route::view('/open-bestellingen', 'admin.open_bestellingen');
     Route::get('/menu', [AdminMenuController::class, 'index'])->name('admin.menu');
