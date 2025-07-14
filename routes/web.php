@@ -18,7 +18,7 @@ Route::view('/', 'welkom');
 Route::prefix('klant')->group(function () {
     // Route::view('/', 'klant.index');
     Route::get('/menu/{categorie?}/{subcategorie?}', [KlantMenuController::class, 'index'])->name('klant.menu');
-    Route::get('/besteloverzicht', [BestellingController::class, 'show'])->name('klant.bestellingen');
+    // Route::get('/besteloverzicht', [BestellingController::class, 'show'])->name('klant.bestellingen');
     Route::get('/gerecht/{id}', [GerechtController::class, 'show'])->name('klant.gerecht.show');
     Route::view('/betalen', 'klant.betalen')->name('betalen');
 });
@@ -31,6 +31,10 @@ Route::prefix('admin')->group(function () {
     Route::view('/open-bestellingen', 'admin.open_bestellingen');
     Route::get('/menu', [AdminMenuController::class, 'index'])->name('admin.menu');
 });
+
+Route::get('/start/{mapNaam}/{sessie_id?}', [BestellingController::class, 'startView'])->name('bestellingen.start');
+
+
 
 // classes met routes en methodes
 Route::post('/codes/login', [WerknemerscodeController::class, 'login'])->name('codes.login');

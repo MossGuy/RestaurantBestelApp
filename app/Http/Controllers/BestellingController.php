@@ -13,6 +13,7 @@ class BestellingController extends Controller
         // Bijvoorbeeld:
         return view('klant.index');
     }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -49,9 +50,14 @@ class BestellingController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function startView(string $mapNaam, ?string $sessie_id = null)
     {
-        $session_id = session('sessie_id');
+        if (!in_array($mapNaam, ['klant', 'admin'])) {
+            abort(404);
+        }
+
+        // Als sessie_id niet als parameter is doorgegeven, probeer dan uit session te halen
+        $session_id = $sessie_id ?? session('sessie_id');
 
         if (!$session_id) {
             return redirect()->route('klant.menu')->with('error', 'Geen sessie actief.');
@@ -69,10 +75,12 @@ class BestellingController extends Controller
             ->groupBy('bestellingen.gerecht_id', 'gerechten.naam', 'gerechten.prijs')
             ->get();
 
-        return view('klant.bestel_overzicht_lokaal', [
-            'bestellingen' => $bestellingen
+        return view("$mapNaam.bestellingen", [
+            'bestellingen' => $bestellingen,
+            'sessie_id' => $session_id, // eventueel meegeven aan de view
         ]);
     }
+
 
     public function show_all()
     {

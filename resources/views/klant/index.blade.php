@@ -11,7 +11,7 @@
 <section class="flex flex-col min-h-screen">
     <div class="text-center">
         <h1 class="text-2xl font-bold mb-6">Menu</h1>
-        <p><a href="{{ route('klant.bestellingen') }}" class="text-teal-700 p-2 border border-2 rounded-md hover:text-teal-700 font-semibold">Alle bestellingen</a></p>
+        <p><a href="{{ route('bestellingen.start', ['mapNaam' => 'klant', 'sessie_id' => session('sessie_id')]) }}" class="text-teal-700 p-2 border border-2 rounded-md hover:text-teal-700 font-semibold">Alle bestellingen</a></p>
     </div>
 
     <div class="flex-1">

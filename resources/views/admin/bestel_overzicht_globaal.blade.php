@@ -23,7 +23,7 @@
                         <td class="px-4 py-2">{{ $sessie->sessie_id }}</td>
                         <td class="px-4 py-2">{{ $sessie->tafel_nummer }}</td>
                         <td class="px-4 py-2">{{ \Carbon\Carbon::parse($sessie->created_at)->format('d-m-Y H:i') }}</td>
-                        <td class="px-4 py-2 text-teal-800 font-semibold"><a href="">Bekijk</a></td>
+                        <td class="px-4 py-2 text-teal-800 font-semibold"><a href="{{ route('bestellingen.start', ['mapNaam' => 'admin', 'sessie_id' => $sessie->sessie_id]) }}">Bekijk</a></td>
                     </tr>
                 @endforeach
             </tbody>
