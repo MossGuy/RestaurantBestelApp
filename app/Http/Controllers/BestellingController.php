@@ -77,7 +77,7 @@ class BestellingController extends Controller
 
         return view("$mapNaam.bestellingen", [
             'bestellingen' => $bestellingen,
-            'sessie_id' => $session_id,
+            'sessie_id' => $session_id, // eventueel meegeven aan de view
         ]);
     }
 
