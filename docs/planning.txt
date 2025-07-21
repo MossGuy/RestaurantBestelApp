@@ -16,7 +16,7 @@
     (KLAAR) bestelling toevoegen functionaliteit uitwerken
         (KLAAR) individueel gerecht bekijken (KLAAR) gerecht toevoegen via knop
 
-(IN PROGRESS) bestel_overzicht_lokaal view uitwerken 
+(KLAAR) bestel_overzicht_lokaal view uitwerken 
 
 (KLAAR) administrator login functionaliteit uitwerken
 
