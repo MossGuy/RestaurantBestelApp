@@ -20,8 +20,8 @@
 
 (KLAAR) administrator login functionaliteit uitwerken
 
-() bestel_overzicht_globaal view uitwerken:
-    (KLAAR) sessies ophalen, () sessies filteren op tafelnummer, () sessie bestellingen bekijken
+(KLAAR) bestel_overzicht_globaal view uitwerken:
+    (KLAAR) sessies ophalen, () sessies filteren op tafelnummer, (KLAAR) sessie bestellingen bekijken
 
 () open_bestellingen uitwerken
     () frontend - tabel maken, () backend - bestellingen ophalen, () knop maken bestelling sluiten
