@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 
 // gerecht categoriën die zijn toegevoegd:
-// Ramen, Bijgerechten, Dessert, Drank -> Cocktails
+// Ramen, Dessert, Drank, Cocktails
 
 return new class extends Migration
 {
@@ -23,7 +23,7 @@ return new class extends Migration
             'subcategory' => 'rund',
             'prijs' => 14.90,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Rundvleesplakken met verse noodles, zelfgemaakte kipbouillon en groenten',
+            'beschrijving' => 'Ossenhaas',
             'created_at' => now(),
             'updated_at' => now()
         ],
@@ -33,7 +33,7 @@ return new class extends Migration
             'subcategory' => 'kip',
             'prijs' => 13.90,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Gefrituurde kip met verse noodles, zelfgemaakte kipbouillon en groenten',
+            'beschrijving' => 'Gefrituurde kip',
             'created_at' => now(),
             'updated_at' => now()
         ],
@@ -43,17 +43,17 @@ return new class extends Migration
             'subcategory' => 'varken',
             'prijs' => 13.90,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Gemarineerd varkensvlees plakken met verse noodles, zelfgemaakte kipbouillon en groenten',
+            'beschrijving' => 'Gemarineerd varkensvlees',
             'created_at' => now(),
             'updated_at' => now()
         ],
         [
             'naam' => 'Ramen Shrimp',
             'category' => 'ramen',
-            'subcategory' => 'schaaldieren',
+            'subcategory' => 'garnaal',
             'prijs' => 14.90,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Gepaneerde garnalen met verse noodles, zelfgemaakte kipbouillon en groenten',
+            'beschrijving' => 'Gepaneerde garnalen',
             'created_at' => now(),
             'updated_at' => now()
         ],
@@ -63,129 +63,7 @@ return new class extends Migration
             'subcategory' => 'vegetarisch',
             'prijs' => 12.90,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Tofu en groenten met verse noodles en zelfgemaakte kipbouillon',
-            'created_at' => now(),
-            'updated_at' => now()
-        ],
-
-        // == bijgerechten ==
-        [
-            'naam' => 'Karaage',
-            'category' => 'bijgerecht',
-            'subcategory' => 'kip',
-            'prijs' => 4.50,
-            'leeftijdsgebonden' => false,
-            'beschrijving' => 'Gefrituurde kipblokjes (4 stuks)',
-            'created_at' => now(),
-            'updated_at' => now()
-        ],
-        [
-            'naam' => 'Gyoza',
-            'category' => 'bijgerecht',
-            'subcategory' => 'kip',
-            'prijs' => 3.90,
-            'leeftijdsgebonden' => false,
-            'beschrijving' => 'Pasteitjes met kip (3 stuks)',
-            'created_at' => now(),
-            'updated_at' => now()
-        ],
-        [
-            'naam' => 'tempura Shrimp',
-            'category' => 'bijgerecht',
-            'subcategory' => 'schaaldieren',
-            'prijs' => 3.50,
-            'leeftijdsgebonden' => false,
-            'beschrijving' => 'Gepaneerde garnalen (2 stuks)',
-            'created_at' => now(),
-            'updated_at' => now()
-        ],
-        [
-            'naam' => 'Edamame',
-            'category' => 'bijgerecht',
-            'subcategory' => 'vegetarisch',
-            'prijs' => 3.50,
-            'leeftijdsgebonden' => false,
-            'beschrijving' => 'Portie sojabonen',
-            'created_at' => now(),
-            'updated_at' => now()
-        ],
-        [
-            'naam' => 'Mini spring rolls',
-            'category' => 'bijgerecht',
-            'subcategory' => 'vegetarisch',
-            'prijs' => 3.50,
-            'leeftijdsgebonden' => false,
-            'beschrijving' => 'Vegetarische mini loempia’s (6 stuks)',
-            'created_at' => now(),
-            'updated_at' => now()
-        ],
-        [
-            'naam' => 'Kimchi',
-            'category' => 'bijgerecht',
-            'subcategory' => '',
-            'prijs' => 2.90,
-            'leeftijdsgebonden' => false,
-            'beschrijving' => 'Koreaanse gefermenteerde kool',
-            'created_at' => now(),
-            'updated_at' => now()
-        ],
-        [
-            'naam' => 'Friet',
-            'category' => 'bijgerecht',
-            'subcategory' => 'vegetarisch',
-            'prijs' => 3.50,
-            'leeftijdsgebonden' => false,
-            'beschrijving' => 'Portie friet met truffle aioli',
-            'created_at' => now(),
-            'updated_at' => now()
-        ],
-        [
-            'naam' => 'Wakame Salade',
-            'category' => 'bijgerecht',
-            'subcategory' => 'vegetarisch',
-            'prijs' => 3.90,
-            'leeftijdsgebonden' => false,
-            'beschrijving' => 'Zeewier salade',
-            'created_at' => now(),
-            'updated_at' => now()
-        ],
-        [
-            'naam' => 'Koolsla Salade',
-            'category' => 'bijgerecht',
-            'subcategory' => 'vegetarisch',
-            'prijs' => 2.90,
-            'leeftijdsgebonden' => false,
-            'beschrijving' => 'Huisgemaakte koolsla',
-            'created_at' => now(),
-            'updated_at' => now()
-        ],
-        [
-            'naam' => 'Casave Chips',
-            'category' => 'bijgerecht',
-            'subcategory' => 'schaaldieren',
-            'prijs' => 3.50,
-            'leeftijdsgebonden' => false,
-            'beschrijving' => 'Portie casave chips',
-            'created_at' => now(),
-            'updated_at' => now()
-        ],
-        [
-            'naam' => 'Zoetzure komkommers',
-            'category' => 'bijgerecht',
-            'subcategory' => 'vegetarisch',
-            'prijs' => 2.90,
-            'leeftijdsgebonden' => false,
-            'beschrijving' => 'Zoetzure komkommers',
-            'created_at' => now(),
-            'updated_at' => now()
-        ],
-        [
-            'naam' => 'Witte rijst',
-            'category' => 'bijgerecht',
-            'subcategory' => 'vegetarisch',
-            'prijs' => 3.50,
-            'leeftijdsgebonden' => false,
-            'beschrijving' => 'Portie witte rijst',
+            'beschrijving' => 'Tofu en groenten',
             'created_at' => now(),
             'updated_at' => now()
         ],
@@ -234,42 +112,42 @@ return new class extends Migration
 
         // == Dranken ==
         [
-            'naam' => 'Peach Paradise',
+            'naam' => 'Pepsi',
             'category' => 'drank',
-            'subcategory' => 'ice-tea',
-            'prijs' => 3.90,
+            'subcategory' => '',
+            'prijs' => 2.50,
             'leeftijdsgebonden' => false,
             'beschrijving' => 'Peach',
             'created_at' => now(),
             'updated_at' => now()
         ],
         [
-            'naam' => 'Lychee Love',
+            'naam' => 'Lipton Ice Tea Sparkling',
             'category' => 'drank',
-            'subcategory' => 'ice-tea',
-            'prijs' => 3.90,
+            'subcategory' => '',
+            'prijs' => 2.50,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Lychee',
+            'beschrijving' => 'Peach',
             'created_at' => now(),
             'updated_at' => now()
         ],
         [
-            'naam' => 'Gold Sunshine',
+            'naam' => 'Lipton Ice Tea Green',
             'category' => 'drank',
-            'subcategory' => 'ice-tea',
-            'prijs' => 3.90,
+            'subcategory' => '',
+            'prijs' => 2.50,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Mango',
+            'beschrijving' => 'Peach',
             'created_at' => now(),
             'updated_at' => now()
         ],
         [
-            'naam' => 'Citrus Daydream',
+            'naam' => '7-Up',
             'category' => 'drank',
-            'subcategory' => 'ice-tea',
-            'prijs' => 3.90,
+            'subcategory' => '',
+            'prijs' => 2.50,
             'leeftijdsgebonden' => false,
-            'beschrijving' => 'Lemon',
+            'beschrijving' => 'Peach',
             'created_at' => now(),
             'updated_at' => now()
         ],
@@ -277,8 +155,8 @@ return new class extends Migration
         // == Cocktails ==
         [
             'naam' => 'Pornstar Martini',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 10.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Vodka / vanilla / passion fruit',
@@ -287,8 +165,8 @@ return new class extends Migration
         ],
         [
             'naam' => 'Espresso Martini',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 10.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Vodka / espresso / coffee liqour',
@@ -297,8 +175,8 @@ return new class extends Migration
         ],
         [
             'naam' => 'Koneo Love',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 10.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Lemon soda / yakult / soju',
@@ -307,8 +185,8 @@ return new class extends Migration
         ],
         [
             'naam' => 'Mojito',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 9.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Mint / lime / rum / sugar',
@@ -317,8 +195,8 @@ return new class extends Migration
         ],
         [
             'naam' => 'Strawberry Mojito',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 9.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Strawberry rum / mint / lime / sugar',
@@ -327,8 +205,8 @@ return new class extends Migration
         ],
         [
             'naam' => 'Tokyo Breeze',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 9.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Jinzu Gin / tonic / citrus',
@@ -337,14 +215,15 @@ return new class extends Migration
         ],
         [
             'naam' => 'Watermelon Crush',
-            'category' => 'drank',
-            'subcategory' => 'cocktails',
+            'category' => 'cocktails',
+            'subcategory' => '',
             'prijs' => 9.90,
             'leeftijdsgebonden' => true,
             'beschrijving' => 'Watermelon liqour / soda / lime',
             'created_at' => now(),
             'updated_at' => now()
         ]
+        
     ]);
     }
 
