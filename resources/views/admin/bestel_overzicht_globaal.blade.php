@@ -74,7 +74,7 @@
 
                 {{-- Actieknoppen --}}
                 <div class="col-span-full flex justify-end gap-2 mt-4">
-                    <button type="submit" class="bg-teal-700 text-white px-4 py-2 rounded-md hover:bg-teal-800">
+                    <button type="submit" class="bg-teal-700 px-4 py-2 border border-2 border-teal-800 text-teal-800 font-semibold rounded-md hover:bg-teal-800">
                         Filter toepassen
                     </button>
                     <a href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName()) }}"
@@ -92,7 +92,7 @@
         {{-- De sessietabel (blijft hetzelfde) --}}
         <section class="mt-6">
             @if ($sessies->isEmpty())
-                <p>Er zijn nog geen afgeronde sessies.</p>
+                <p>Geen sessies gevonden.</p>
             @else
                 <table class="min-w-full bg-white border border-gray-200 shadow-sm rounded-md">
                     <thead class="bg-gray-100">
