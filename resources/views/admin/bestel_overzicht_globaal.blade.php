@@ -15,7 +15,7 @@
             </button>
 
             <p>
-                <a href="{{ url()->previous() }}"
+                <a href="{{ url('admin') }}"
                    class="text-teal-700 px-4 py-2 border border-2 rounded-md font-semibold inline-block">
                     Terug
                 </a>

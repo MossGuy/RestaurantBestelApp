@@ -121,6 +121,11 @@ class BestellingController extends Controller
         return view('admin.bestel_overzicht_globaal', compact('sessies'));
     }
 
+    public function  show_open() {
+
+        return view('admin.open_bestellingen');
+    }
+
 
 
 

@@ -29,7 +29,8 @@ Route::prefix('admin')->middleware('session.none')->group(function () {
     Route::view('/', 'admin.index');
     Route::get('/besteloverzicht', [BestellingController::class, 'show_all'])->name('admin.besteloverzicht');
     Route::get('/start/{mapNaam}', [BestellingController::class, 'startView'])->name('bestellingen.start');
-    Route::view('/open-bestellingen', 'admin.open_bestellingen');
+    Route::get('/open_bestellingen', [BestellingController::class, 'show_open'])->name('bestellingen.open');
+    // Route::view('/open-bestellingen', 'admin.open_bestellingen');
     Route::get('/menu', [AdminMenuController::class, 'index'])->name('admin.menu');
 });
 
