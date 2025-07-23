@@ -28,7 +28,8 @@ class BestellingController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'gerecht_id' => ['required', 'exists:gerechten,gerecht_id']
+            'gerecht_id' => ['required', 'exists:gerechten,gerecht_id'],
+            'leeftijdsgebonden' => ['required']
         ]);
 
         $sessie_id = session('sessie_id');
@@ -36,6 +37,12 @@ class BestellingController extends Controller
 
         if (!$sessie_id || !$tafel_nummer) {
             return redirect()->back()->withErrors('Sessiegegevens ontbreken.');
+        }
+
+        if ($validated['leeftijdsgebonden']) {
+            if ($request->inlogcode !== 'juistecode') {
+                return back()->withErrors(['inlogcode' => 'Ongeldige inlogcode.']);
+            }
         }
 
         Bestelling::create([

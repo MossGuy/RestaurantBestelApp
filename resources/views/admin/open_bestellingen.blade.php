@@ -1,48 +1,37 @@
 @extends('layouts.main')
 
 @section('main')
-    <section>
-        <div class="flex justify-between items-center">
-            <h1 class="text-2xl font-bold mb-6">Open bestellingen</h1>
-            <p><a href="{{ url('admin') }}" class="text-teal-700 p-2 border border-2 rounded-md hover:text-teal-700 font-semibold">Terug</a></p>
-        </div>
-    </section>
+    <section class="p-6">
+        <a href="{{ url()->previous() }}" class="text-sm text-teal-700 hover:underline mb-4 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+            <span class="ml-1">Terug</span>
+        </a>
 
-    <section>
-        @if ($bestellingen->isEmpty())
-            <p class="text-gray-600">Er zijn geen open bestellingen.</p>
-        @else
-            <div class="overflow-x-auto">
-                <table class="min-w-full bg-white border border-gray-200 shadow rounded-md">
-                    <thead class="bg-gray-100 text-left text-sm font-semibold text-gray-700">
-                        <tr>
-                            <th class="px-4 py-3 border-b">Sessie ID</th>
-                            <th class="px-4 py-3 border-b">Gerecht</th>
-                            <th class="px-4 py-3 border-b">Besteld op</th>
-                            <th class="px-4 py-3 border-b">Actie</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-sm text-gray-800">
-                        @foreach ($bestellingen as $bestelling)
-                            <tr class="hover:bg-gray-50 border-t">
-                                <td class="px-4 py-2">{{ $bestelling->sessie_id }}</td>
-                                <td class="px-4 py-2">{{ $bestelling->gerecht_naam }}</td>
-                                <td class="px-4 py-2">{{ \Carbon\Carbon::parse($bestelling->created_at)->format('d-m-Y H:i') }}</td>
-                                <td class="px-4 py-2">
-                                    @if (!$bestelling->is_klaar)
-                                    <form action="{{ route('bestelling.klaar', $bestelling->id) }}" method="POST" onsubmit="return confirm('Markeer deze bestelling als klaar?');">
-                                        @csrf
-                                        <button type="submit" class="bg-teal-600 text-white px-3 py-1 rounded hover:bg-teal-700 text-sm">
-                                            Klaar
-                                        </button>
-                                    </form>
-                                    @endif
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        @endif
+        <figure class="bg-white rounded-xl shadow-md overflow-hidden max-w-md mx-auto">
+            <img src="{{ asset('images/dish_placeholder.png') }}" alt="Foto van {{ $gerecht->naam }}" class="w-full h-64 object-cover">
+            <figcaption class="p-4">
+                <h1 class="text-2xl font-bold">{{ $gerecht->naam }}</h1>
+                <p>{{ $gerecht->beschrijving }}.</p>
+                <p class="text-stone-700 my-2">€{{ number_format($gerecht->prijs, 2, ',', '.') }}</p>
+                <form action="{{ route('bestelling.store') }}" method="POST">
+                    @csrf
+                    <input type="hidden" id="gerecht_id" name="gerecht_id" value="{{ $gerecht->gerecht_id }}">
+
+                    <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded">
+                        Toevoegen aan bestelling
+                    </button>
+                </form>
+
+                @if ($gerecht->leeftijdsgebonden)
+                    <div class="mt-4">
+                        <label for="inlogcode" class="block mb-1 font-medium text-sm">Inlogcode medewerker:</label>
+                        <input type="password" id="inlogcode" name="inlogcode" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                        <p class="text-red-700 text-sm mt-1">Let op! Geen 18, geen alcohol.</p>
+                    </div>
+                @endif
+            </figcaption>
+        </figure>
     </section>
 @endsection
