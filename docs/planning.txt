@@ -28,6 +28,6 @@
 
 (KLAAR) menu_weergave uitwerken voor admin paneel
 
-() functionaliteit uitwerken voor leeftijdsgebonden gerechten - toestemming geven met inlogcode
+(KLAAR) functionaliteit uitwerken voor leeftijdsgebonden gerechten - toestemming geven met inlogcode
 
 *: Genoeg om mee te testen
