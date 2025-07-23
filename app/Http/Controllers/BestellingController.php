@@ -77,7 +77,7 @@ class BestellingController extends Controller
 
         return view("$mapNaam.bestellingen", [
             'bestellingen' => $bestellingen,
-            'sessie_id' => $session_id, // eventueel meegeven aan de view
+            'sessie_id' => $session_id,
         ]);
     }
 
@@ -121,14 +121,25 @@ class BestellingController extends Controller
         return view('admin.bestel_overzicht_globaal', compact('sessies'));
     }
 
-    public function  show_open() {
+    public function show_open()
+    {
+        $openBestellingen = DB::table('bestellingen')
+            ->join('gerechten', 'bestellingen.gerecht_id', '=', 'gerechten.gerecht_id')
+            ->where('bestellingen.is_klaar', false)
+            ->select(
+                'bestellingen.id',
+                'bestellingen.sessie_id',
+                'bestellingen.created_at',
+                'gerechten.naam as gerecht_naam',
+                'bestellingen.is_klaar'
+            )
+            ->orderBy('bestellingen.created_at', 'asc')
+            ->get();
 
-        return view('admin.open_bestellingen');
+        return view('admin.open_bestellingen', [
+            'bestellingen' => $openBestellingen
+        ]);
     }
-
-
-
-
 
     /**
      * Show the form for editing the specified resource.
@@ -145,6 +156,16 @@ class BestellingController extends Controller
     {
         //
     }
+
+    public function markeerAlsKlaar($id)
+    {
+        $bestelling = Bestelling::findOrFail($id);
+        $bestelling->is_klaar = true;
+        $bestelling->save();
+
+        return redirect()->back()->with('success', 'Bestelling gemarkeerd als klaar.');
+    }
+
 
     /**
      * Remove the specified resource from storage.

@@ -23,6 +23,7 @@ return new class extends Migration
                 ->onDelete('cascade');
 
             $table->integer('tafel_nummer');
+            $table->boolean('is_klaar')->default(false);
             
             $table->timestamps();
         });

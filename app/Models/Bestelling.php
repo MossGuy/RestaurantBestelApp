@@ -11,13 +11,14 @@ class Bestelling extends Model
 
     protected $table = 'bestellingen';
 
-    protected $primaryKey = 'bestelling_id';
+    protected $primaryKey = 'id';
     public $incrementing = true;
 
     protected $fillable = [
         'sessie_id',
         'gerecht_id',
-        'tafel_nummer'
+        'tafel_nummer',
+        'is_klaar'
     ];
 
     public function sessie()
