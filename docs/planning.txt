@@ -23,8 +23,8 @@
 (KLAAR) bestel_overzicht_globaal view uitwerken:
     (KLAAR) sessies ophalen, (KLAAR) sessies filteren op tafelnummer, (KLAAR) sessie bestellingen bekijken
 
-() open_bestellingen uitwerken
-    () frontend - tabel maken, () backend - bestellingen ophalen, () knop maken bestelling sluiten
+(KLAAR) open_bestellingen uitwerken
+    (KLAAR) frontend - tabel maken, (KLAAR) backend - bestellingen ophalen, (KLAAR) knop maken bestelling sluiten
 
 (KLAAR) menu_weergave uitwerken voor admin paneel
 
