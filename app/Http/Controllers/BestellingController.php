@@ -84,14 +84,43 @@ class BestellingController extends Controller
 
     public function show_all()
     {
-        $sessies = DB::table('tafel_sessies')
-            ->where('afgerond', true)
-            ->orderBy('created_at', 'desc') // Meest recente eerst
-            ->select('sessie_id', 'tafel_nummer', 'created_at')
-            ->get();
+        $query = DB::table('tafel_sessies')
+            ->select('sessie_id', 'tafel_nummer', 'created_at', 'afgerond');
+
+        // Filter op afgerond (standaard true, tenzij anders gekozen)
+        if (request()->filled('afgerond')) {
+            $query->where('afgerond', (bool) request('afgerond'));
+        } else {
+            $query->where('afgerond', true); // default
+        }
+
+        // Filter op tafelnummer
+        if ($tafel = request('tafelnummer')) {
+            $query->where('tafel_nummer', 'like', "%$tafel%");
+        }
+
+        // Filter op specifieke datum
+        if ($datum = request('datum')) {
+            $query->whereDate('created_at', $datum);
+        }
+
+        // Sortering
+        $sortBy = request('sort_by');
+        $sortDir = request('sort_dir', 'asc');
+
+        if ($sortBy === 'tafelnummer') {
+            $query->orderBy('tafel_nummer', $sortDir);
+        } elseif ($sortBy === 'datum') {
+            $query->orderBy('created_at', $sortDir);
+        } else {
+            $query->orderBy('created_at', 'desc'); // default sortering
+        }
+
+        $sessies = $query->get();
 
         return view('admin.bestel_overzicht_globaal', compact('sessies'));
     }
+
 
 
 
