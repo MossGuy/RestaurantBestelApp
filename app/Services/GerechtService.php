@@ -11,7 +11,7 @@ class GerechtService
 {
     public static function selectAll(): Collection
     {
-        $volgorde = ['ramen', 'bijgerecht', 'dessert', 'drank', 'cocktails'];
+        $volgorde = ['ramen', 'poke', 'bijgerecht', 'dessert', 'drank', 'cocktails'];
 
         $gerechten = DB::table('gerechten')
             ->orderBy('category')
@@ -24,16 +24,29 @@ class GerechtService
             ->mapWithKeys(fn($cat) => [$cat => $gerechten[$cat] ?? collect()]);
     }
 
-    public function menu(?string $categorie = null, ?string $subcategorie = null){
+    public function menu(?string $categorie = null, ?string $subcategorie = null)
+    {
         if ($subcategorie) {
             return Gerecht::where('subcategory', $subcategorie)->get();
         } elseif ($categorie) {
             return Gerecht::where('category', $categorie)->get();
         } else {
-            return Gerecht::select('gerecht_id', 'category', 'naam', 'prijs') // gerecht_id toegevoegd
+            $volgorde = ['ramen', 'poke', 'bijgerecht', 'dessert', 'drank', 'cocktails'];
+
+            $gerechten = Gerecht::select('gerecht_id', 'category', 'naam', 'prijs')
+                ->orderBy('category')
+                ->orderBy('subcategory')
+                ->orderBy('naam')
                 ->get()
-                ->groupBy('category')
-                ->map(fn($items) => $items->take(2));
+                ->groupBy('category');
+
+            // Sorteer op basis van $volgorde
+            return collect($volgorde)
+                ->mapWithKeys(function ($cat) use ($gerechten) {
+                    return [$cat => $gerechten->get($cat, collect())->take(2)];
+                })
+                ->filter(fn($items) => $items->isNotEmpty()); // optioneel: verwijder lege categorieën
         }
     }
+
 }
