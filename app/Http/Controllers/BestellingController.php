@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bestelling;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Werknemerscode;
 
 class BestellingController extends Controller
 {
@@ -29,7 +30,7 @@ class BestellingController extends Controller
     {
         $validated = $request->validate([
             'gerecht_id' => ['required', 'exists:gerechten,gerecht_id'],
-            'leeftijdsgebonden' => ['required']
+            'inlogcode' => ['nullable', 'string']
         ]);
 
         $sessie_id = session('sessie_id');
@@ -39,9 +40,10 @@ class BestellingController extends Controller
             return redirect()->back()->withErrors('Sessiegegevens ontbreken.');
         }
 
-        if ($validated['leeftijdsgebonden']) {
-            if ($request->inlogcode !== 'juistecode') {
-                return back()->withErrors(['inlogcode' => 'Ongeldige inlogcode.']);
+        if ($request['leeftijdsgebonden']) {
+            $geldigeCodes = Werknemerscode::pluck('code')->toArray();
+            if (!in_array($request->inlogcode, $geldigeCodes)) {
+                return back()->withErrors(['inlogcode' => 'Ongeldige inlogcode.'])->withInput();
             }
         }
 
