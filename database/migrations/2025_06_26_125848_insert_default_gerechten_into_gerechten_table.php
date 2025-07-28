@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 
 // gerecht categoriën die zijn toegevoegd:
-// Ramen, Dessert, Drank, Cocktails
+// Ramen, poke, Dessert, Drank, Cocktails
 
 return new class extends Migration
 {
@@ -64,6 +64,48 @@ return new class extends Migration
             'prijs' => 12.90,
             'leeftijdsgebonden' => false,
             'beschrijving' => 'Tofu en groenten',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+
+        // == Poke ==
+        [
+            'naam' => 'Poke Salmon',
+            'category' => 'poke',
+            'subcategory' => 'vis',
+            'prijs' => 13.50,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Met zalm, surimi krab en masago',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Poke Tempura Shrimp',
+            'category' => 'poke',
+            'subcategory' => 'garnaal',
+            'prijs' => 13.50,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Met geparneerde garnalen, surimi krab en masago',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Poke Katsu',
+            'category' => 'poke',
+            'subcategory' => 'kip',
+            'prijs' => 12.50,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Met gefrituurde kip en tofu',
+            'created_at' => now(),
+            'updated_at' => now()
+        ],
+        [
+            'naam' => 'Poke Veggie',
+            'category' => 'poke',
+            'subcategory' => 'vegetarisch',
+            'prijs' => 11.50,
+            'leeftijdsgebonden' => false,
+            'beschrijving' => 'Met omelet en tofu',
             'created_at' => now(),
             'updated_at' => now()
         ],
